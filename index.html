@@ -3,101 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title> Dark Wings </title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <title>NBA Clothes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --rolex-green: #005430;
+      --rolex-gold: #d4af37;
+      --rolex-dark: #101010;
+      --rolex-light: #fff;
+      --rolex-gray: #ececec;
+      --rolex-shadow: 0 8px 32px 0 rgba(31,38,135,0.14);
+    }
     * { box-sizing: border-box; }
     body {
       font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--rolex-dark);
+      color: var(--rolex-light);
       margin: 0;
-      background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
-      color: #fafafa;
-      min-height: 100vh;
+      padding: 0;
     }
     header {
-      background: #111;
-      color: #fff;
-      padding: 2em 1em 1em 1em;
+      background: var(--rolex-dark);
+      color: var(--rolex-gold);
+      padding: 1.5em 0 1.5em 0;
+      box-shadow: var(--rolex-shadow);
       text-align: center;
-      letter-spacing: 2px;
-      font-size: 2.2em;
-      font-weight: 700;
-      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.1);
+      font-family: 'Cardo', serif;
+      position: sticky;
+      top: 0;
+      z-index: 20;
     }
-    .container {
-      max-width: 1120px;
-      margin: 2em auto 0 auto;
-      padding: 2em;
-      background: rgba(22,26,37,0.9);
-      border-radius: 15px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2.5em;
+      margin-top: 1em;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.09em;
+      font-weight: 600;
+    }
+    nav a {
+      color: var(--rolex-light);
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: color 0.2s;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+    }
+    nav a:hover, nav a.active {
+      color: var(--rolex-gold);
+      border-color: var(--rolex-gold);
+    }
+    .hero {
+      background: linear-gradient(135deg, #000 65%, var(--rolex-green) 100%);
+      padding: 4em 1em 4em 1em;
+      text-align: center;
+      box-shadow: var(--rolex-shadow);
+    }
+    .hero h1 {
+      font-family: 'Cardo', serif;
+      font-size: 3em;
+      color: var(--rolex-gold);
+      margin-bottom: 0.35em;
+      letter-spacing: 3px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .hero p {
+      font-size: 1.22em;
+      color: #e0e0e0;
+      max-width: 550px;
+      margin: 0 auto;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    section {
+      max-width: 1100px;
+      margin: 3em auto 3em auto;
+      background: rgba(30,30,30,0.99);
+      border-radius: 18px;
+      padding: 3em 2em;
+      box-shadow: var(--rolex-shadow);
+    }
+    .titulo-seccion {
+      font-family: 'Cardo', serif;
+      color: var(--rolex-gold);
+      text-align: center;
+      font-size: 2.1em;
+      letter-spacing: 3px;
+      margin-bottom: 0.7em;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .quienes-somos {
+      font-size: 1.19em;
+      color: #e0e0e0;
+      text-align: center;
+      margin-bottom: 0.5em;
+      font-family: 'Montserrat', Arial, sans-serif;
     }
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2em;
     }
     .product {
-      background: #161a25;
+      background: #191919;
       border-radius: 14px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      padding: 1.5em 1em 1.5em 1em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.17);
+      padding: 1.7em 1em 1.3em 1em;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      transition: box-shadow .2s;
-    }
-    .product:hover {
-      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.25);
+      border: 2px solid var(--rolex-gold);
+      transition: box-shadow .2s, border-color .2s;
     }
     .product img {
       max-width: 100%;
       height: 180px;
       object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.22);
-      margin-bottom: 1em;
+      border-radius: 12px;
+      border: 2px solid var(--rolex-gold);
       background: #222;
+      margin-bottom: 1em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.22);
     }
     .product h3 {
       margin: 0.5em 0 0.2em 0;
       font-size: 1.2em;
-      font-weight: 700;
+      font-family: 'Cardo', serif;
+      color: var(--rolex-gold);
       letter-spacing: 1px;
     }
     .product p {
-      color: #d6d6d6;
+      color: #e0e0e0;
       margin: 0.2em 0 1em 0;
+      font-size: 1.13em;
     }
     .product button {
-      background: linear-gradient(90deg, #ff6a00 0%, #ee0979 100%);
-      color: white;
+      background: linear-gradient(90deg, var(--rolex-gold) 0%, #f5d97c 100%);
+      color: #191919;
       border: none;
       padding: 0.7em 1.5em;
       border-radius: 6px;
       cursor: pointer;
       font-size: 1em;
       font-weight: 700;
-      transition: background 0.2s, transform 0.1s;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.16);
+      transition: background 0.2s, color 0.1s;
+      font-family: 'Montserrat', Arial, sans-serif;
+      letter-spacing: 1.2px;
+      margin-top: 0.5em;
     }
-    .product button:hover, .cart-item .qty-btn:hover {
-      background: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
-      transform: scale(1.06);
+    .product button:hover {
+      background: linear-gradient(90deg, #f5d97c 0%, var(--rolex-gold) 100%);
+      color: #000;
     }
     .cart {
-      position: fixed;
-      top: 2em;
-      right: 2em;
-      background: rgba(22, 26, 37, 0.98);
+      background: #191919;
       padding: 1.2em;
       border-radius: 16px;
-      box-shadow: 0 6px 24px rgba(40,40,80,0.35);
-      width: 320px;
-      z-index: 15;
+      box-shadow: 0 6px 24px rgba(40,40,80,0.18);
+      width: 100%;
       color: #fff;
+      border: 2px solid var(--rolex-gold);
+      margin-bottom: 1em;
     }
-    .cart h4 { margin: 0 0 0.5em 0; font-size: 1.3em; font-weight: 700; }
+    .cart h4 { margin: 0 0 0.5em 0; font-size: 1.3em; font-weight: 700; color: var(--rolex-gold);}
     .cart-item {
       display: flex;
       align-items: center;
@@ -111,13 +179,12 @@
     }
     .cart-item span {
       flex: 1;
-      display: block;
       color: #fafafa;
     }
     .cart-item .qty-btn {
-      background: #ff6a00;
+      background: var(--rolex-gold);
       border: none;
-      color: #fff;
+      color: #191919;
       font-weight: bold;
       font-size: 1.2em;
       border-radius: 50%;
@@ -125,11 +192,12 @@
       height: 28px;
       cursor: pointer;
       margin: 0 3px;
-      transition: background .2s, transform .1s;
+      transition: background .2s, color .1s;
       outline: none;
     }
-    .cart-item .qty-btn[aria-label]:hover {
-      background: #ee0979;
+    .cart-item .qty-btn:hover {
+      background: #fff7d0;
+      color: #000;
     }
     .cart-item .remove-btn {
       background: #e53935;
@@ -170,8 +238,63 @@
     .clear-cart:hover {
       background: #424242;
     }
+    .cart-form {
+      margin-top: 1em;
+    }
+    .cart-form input, .cart-form select {
+      padding: 0.5em;
+      border-radius: 6px;
+      border: 1.5px solid var(--rolex-gold);
+      margin-bottom: 0.5em;
+      width: 100%;
+      font-size: 1em;
+      background: #232323;
+      color: var(--rolex-light);
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .cart-form button {
+      width: 100%;
+      margin-top: 0.5em;
+      font-size: 1.1em;
+      background: linear-gradient(90deg, var(--rolex-gold) 0%, #fff7d0 100%);
+      color: #191919;
+      font-weight: 800;
+      border: none;
+      border-radius: 7px;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .cart-form button:hover {
+      background: linear-gradient(90deg, #fff7d0 0%, var(--rolex-gold) 100%);
+      color: #000;
+    }
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5em;
+      margin-top: 1em;
+    }
+    .review {
+      background: #222;
+      border-radius: 10px;
+      padding: 1.3em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      color: #f5f5f5;
+      border: 1.5px solid var(--rolex-gold);
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .review .author {
+      font-weight: 700;
+      color: var(--rolex-gold);
+    }
+    .review .stars {
+      color: #ffd700;
+      margin-bottom: 0.3em;
+      display: block;
+      font-size: 1.1em;
+      letter-spacing: 2px;
+    }
     .footer {
-      background: #111;
+      background: var(--rolex-dark);
       color: #bbb;
       text-align: center;
       padding: 2em 1em 1em 1em;
@@ -179,67 +302,120 @@
       font-size: 1em;
       margin-top: 4em;
       border-radius: 0 0 12px 12px;
+      border-top: 2px solid var(--rolex-gold);
+      font-family: 'Montserrat', Arial, sans-serif;
     }
-    @media (max-width: 800px) {
-      .container { padding: 1em; }
-      .cart { width: 92vw; left: 2vw; right: unset; }
+    @media (max-width: 900px) {
+      section { padding: 1.2em; }
     }
     @media (max-width: 600px) {
-      .products { grid-template-columns: 1fr; gap: 1em; }
-      .cart { position: static; width: 100%; margin-top: 2em; }
-      header, .footer { font-size: 1.1em; }
+      .products, .reviews {
+        grid-template-columns: 1fr;
+        gap: 1em;
+      }
+      .hero h1 { font-size: 2em; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  NBA CLOTHES
-</header>
+  <header>
+    <div style="font-size:2em; font-family:'Cardo',serif; letter-spacing:6px; color:var(--rolex-gold); font-weight:900;">
+      NBA CLOTHES
+    </div>
+    <nav>
+      <a href="#quienes-somos">Quiénes somos</a>
+      <a href="#productos">Productos</a>
+      <a href="#carrito">Carrito</a>
+      <a href="#reseñas">Reseñas</a>
+    </nav>
+  </header>
 
-<div class="container">
-  <div class="products" id="product-list">
-    <!-- Los productos se agregan por JS -->
+  <!-- Portada -->
+  <div class="hero">
+    <h1>NBA CLOTHES</h1>
+    <p>Estilo, lujo y pasión por el baloncesto. Inspirados en la elegancia y exclusividad, nuestras prendas fusionan el espíritu NBA con la distinción del streetwear más selecto.</p>
   </div>
-</div>
 
-<div class="cart" id="cart" aria-label="Carrito de compras">
-  <h4>🛒 Carrito</h4>
-  <div id="cart-items"></div>
-  <strong>Total: $<span id="cart-total">0</span></strong>
-  <div class="cart-actions">
-    <button class="clear-cart" onclick="clearCart()" aria-label="Vaciar carrito">Vaciar carrito</button>
-  </div>
-</div>
+  <!-- Quiénes somos -->
+  <section id="quienes-somos">
+    <div class="titulo-seccion">¿Quiénes somos?</div>
+    <div class="quienes-somos">
+      Somos NBA Clothes, una marca apasionada por el baloncesto y el streetwear de alto nivel. Nuestra misión es ofrecer prendas y accesorios de calidad premium, con diseños exclusivos y acabados que reflejan la auténtica esencia NBA y la elegancia urbana.
+    </div>
+  </section>
 
-<footer class="footer">
-  &copy; 2025 NBA Clothes. Inspirado en Fake Gods. Todos los derechos reservados.
-</footer>
+  <!-- Productos -->
+  <section id="productos">
+    <div class="titulo-seccion">Productos</div>
+    <div class="products" id="product-list"></div>
+  </section>
+
+  <!-- Carrito y método de pago -->
+  <section id="carrito">
+    <div class="titulo-seccion">Tu Carrito</div>
+    <div class="cart" id="cart" aria-label="Carrito de compras">
+      <div id="cart-items"></div>
+      <strong style="color:var(--rolex-gold);font-size:1.15em;">Total: $<span id="cart-total">0</span></strong>
+      <div class="cart-actions">
+        <button class="clear-cart" onclick="clearCart()" aria-label="Vaciar carrito">Vaciar carrito</button>
+      </div>
+      <form class="cart-form" onsubmit="return checkout(event)">
+        <input type="text" id="name" placeholder="Tu nombre" required>
+        <input type="email" id="email" placeholder="Tu correo" required>
+        <select id="payment" required>
+          <option value="">Selecciona método de pago</option>
+          <option value="tarjeta">Tarjeta de crédito/débito</option>
+          <option value="paypal">PayPal</option>
+        </select>
+        <button type="submit">Pagar</button>
+      </form>
+      <div id="checkout-message" style="margin-top:1em;color:var(--rolex-gold);font-weight:bold;"></div>
+    </div>
+  </section>
+
+  <!-- Reseñas -->
+  <section id="reseñas">
+    <div class="titulo-seccion">Reseñas de compradores</div>
+    <div class="reviews" id="reviews-list">
+      <div class="review">
+        <span class="stars">★★★★★</span>
+        <div>Las camisetas tienen acabados de lujo, ¡muy recomendadas!<br><span class="author">- Javier R.</span></div>
+      </div>
+      <div class="review">
+        <span class="stars">★★★★★</span>
+        <div>El diseño es increíble, se nota la calidad en cada detalle.<br><span class="author">- Lucía G.</span></div>
+      </div>
+      <div class="review">
+        <span class="stars">★★★★☆</span>
+        <div>La atención fue excelente y el envío rápido.<br><span class="author">- Pedro M.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2025 NBA Clothes. Inspirado en el lujo y la elegancia. Todos los derechos reservados.
+  </footer>
 
 <script>
+  // Productos de ejemplo
   const products = [
     { id: 1, name: "Camiseta Bulls", price: 29.99, image: "https://fakegodsstore.com/cdn/shop/files/FG_TEE_WHITE_900x.jpg?v=1687883000", alt: "Camiseta blanca estilo NBA" },
     { id: 2, name: "Gorra Negra", price: 14.99, image: "https://fakegodsstore.com/cdn/shop/products/FG_CAP_BLACK_900x.jpg?v=1687883000", alt: "Gorra negra estilo NBA" },
     { id: 3, name: "Zapatillas Sport", price: 49.99, image: "https://fakegodsstore.com/cdn/shop/products/FG_SNEAKERS_900x.jpg?v=1687883000", alt: "Zapatillas deportivas NBA" }
   ];
-
   let cart = [];
 
-  // Manejo seguro de localStorage
   function loadCart() {
     try {
       const saved = localStorage.getItem('cart');
       cart = saved ? JSON.parse(saved) : [];
-    } catch (e) {
-      cart = [];
-    }
+    } catch { cart = []; }
   }
   function saveCart() {
-    try {
-      localStorage.setItem('cart', JSON.stringify(cart));
-    } catch (e) {}
+    try { localStorage.setItem('cart', JSON.stringify(cart)); } catch {}
   }
-
   function renderProducts() {
     const list = document.getElementById("product-list");
     list.innerHTML = "";
@@ -255,15 +431,11 @@
       list.appendChild(div);
     });
   }
-
   function addToCart(id) {
     const product = products.find(p => p.id === id);
     const existing = cart.find(item => item.id === id);
-    if (existing) {
-      existing.qty += 1;
-    } else {
-      cart.push({ ...product, qty: 1 });
-    }
+    if (existing) existing.qty += 1;
+    else cart.push({ ...product, qty: 1 });
     saveCart();
     renderCart();
   }
@@ -279,24 +451,15 @@
   }
   function increaseQty(id) {
     const item = cart.find(item => item.id === id);
-    if (item) {
-      item.qty += 1;
-      saveCart();
-      renderCart();
-    }
+    if (item) { item.qty += 1; saveCart(); renderCart(); }
   }
   function decreaseQty(id) {
     const item = cart.find(item => item.id === id);
-    if (item && item.qty > 1) {
-      item.qty -= 1;
-    } else {
-      removeFromCart(id);
-      return;
-    }
+    if (item && item.qty > 1) item.qty -= 1;
+    else removeFromCart(id);
     saveCart();
     renderCart();
   }
-
   function renderCart() {
     const cartItems = document.getElementById("cart-items");
     cartItems.innerHTML = "";
@@ -316,14 +479,30 @@
     });
     document.getElementById("cart-total").innerText = total.toFixed(2);
   }
-
-  // Inicializar
+  function checkout(event) {
+    event.preventDefault();
+    if(cart.length === 0) {
+      document.getElementById("checkout-message").innerText = "El carrito está vacío.";
+      return false;
+    }
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const payment = document.getElementById("payment").value;
+    if (!name || !email || !payment) {
+      document.getElementById("checkout-message").innerText = "Completa todos los datos.";
+      return false;
+    }
+    // Simulación de pago
+    document.getElementById("checkout-message").innerText = "¡Pago realizado con éxito! Gracias por tu compra, " + name + ".";
+    clearCart();
+    document.querySelector(".cart-form").reset();
+    return false;
+  }
   window.onload = () => {
     loadCart();
     renderProducts();
     renderCart();
   };
 </script>
-
 </body>
 </html>
